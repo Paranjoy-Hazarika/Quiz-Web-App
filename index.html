@@ -11,7 +11,7 @@
     <nav>
         <h3 id="navTitle">Quiz Web App</h3>
         <ul id="navList">
-            <li>Home</li>
+            <li data-page="">Home</li>
             <li>About Me</li>
             <li>Contact</li>
         </ul>
@@ -19,7 +19,7 @@
     <main>
 
         <!-- Home Page -->
-        <div class="homePage">
+        <section class="homePage">
             <div class="mainContent">
                 <div class="mainText">
                     <h1>Welcome to the Quiz Web App</h1>
@@ -32,10 +32,10 @@
             <div class="homeButton">
                 <button>Start Quiz</button>
             </div>
-        </div>
+        </section>
 
         <!-- About Me Page -->
-         <div class="aboutPage">
+         <section class="aboutPage">
             <h1 id="aboutTitle">About Me</h1>
             <div class="aboutContent">
                 <div class="aboutSVG">
@@ -45,10 +45,10 @@
                     <p>I'm Paranjoy Hazarika, and this Quiz Web App is a personal project born out of my passion for web development and interactive learning. <br>The primary objective behind creating this app was to practice and solidify my skills in  HTML, CSS, JavaScript. It's designed to provide a seamless and enjoyable quizzing experience across different devices. <br>Here, you can challenge yourself with a variety of questions designed to help you expand your knowledge and reinforce your learning.<br>Thank you for checking it out!</p>
                 </div>
             </div>
-         </div>
+         </section>
 
          <!-- Contact Page -->
-          <div class="contactPage">
+          <section class="contactPage">
             <h1 id="contactTitle">Get in Touch</h1>
             <div class="contactContent">
                 <form>
@@ -82,7 +82,17 @@
                     </div>
                 </div>
             </div>
-          </div>
+          </section>
+
+          <!-- Quiz Section -->
+           <section class="quizPage hidden">
+                <h1 id="quizSection">Quiz Section</h1>
+                <div class="quizContent">
+                    <div class="questionContainer"></div>
+                    <div class="optionContainer"></div>
+                </div>
+                <button class="quizControl">Submit</button>
+           </section>
     </main>
 </body>
 </html>
