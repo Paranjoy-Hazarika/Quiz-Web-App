@@ -11,19 +11,21 @@
     <!-- This is the css link -->
      <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
+
+    <!-- Navigation Bar -->
     <nav>
         <h3 id="navTitle">Quiz Web App</h3>
         <ul id="navList">
-            <li data-page="">Home</li>
-            <li>About Me</li>
-            <li>Contact</li>
-            <!-- Add the data page attributes -->
+            <li data-page="home">Home</li>
+            <li data-page="about">About Me</li>
+            <li data-page="contact">Contact</li>
         </ul>
     </nav>
     <main>
 
-        <!-- Home Page -->
+        <!-- Home Page Section -->
         <section class="homePage">
             <div class="mainContent">
                 <div class="mainText">
@@ -39,8 +41,8 @@
             </div>
         </section>
 
-        <!-- About Me Page -->
-         <section class="aboutPage">
+        <!-- About Me Section -->
+         <section class="aboutPage page-section">
             <h1 id="aboutTitle">About Me</h1>
             <div class="aboutContent">
                 <div class="aboutSVG">
@@ -52,8 +54,8 @@
             </div>
          </section>
 
-         <!-- Contact Page -->
-          <section class="contactPage">
+         <!-- Contact Section -->
+          <section class="contactPage page-section">
             <h1 id="contactTitle">Get in Touch</h1>
             <div class="contactContent">
                 <form>
