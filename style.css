@@ -13,6 +13,10 @@
         border: 0;
 }
 
+html {
+        overflow-x: hidden;
+}
+
 body {
         /* Main Body */
         font-family: 'Outfit', monospace;
@@ -20,7 +24,8 @@ body {
         line-height: 1.6;
 
         /* Background Image */
-        background-image: url("Assets/quiz website background 2.jpg");
+        /* ! background-image: url("Assets/quiz website background 2.jpg"); */
+        /* ! backdrop-filter: blur(2px); */
         background-position: center;
         background-size: cover;
         background-attachment: fixed;
@@ -47,6 +52,7 @@ body::before {
 h1, h2, h3, p {
         margin-bottom: 1rem;
 }
+
 /* Base Button Style */
 button {
         background-color: #333;
@@ -69,6 +75,50 @@ button:hover {
 button:active {
         transform: translateY(0);
         box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+main {
+        overflow-y: hidden;
+        overflow-x: hidden;
+}
+
+.circleGradients {
+        min-width: 100%;
+        min-height: 100%;
+
+}
+
+.circle {
+        border-radius: 100%;
+        position: absolute;
+        z-index: -100;
+        
+        filter: blur(100px);
+}
+
+.circle1 {
+        background-color: green;
+        width: 500px;
+        height: 500px;
+
+        top: -250px;
+        right: -250px;
+}
+
+.circle2 {
+        background-color: blue;
+        width: 400px;
+        height: 400px;
+
+}
+
+.circle3 {
+        background-color: red;
+        width: 600px;
+        height: 600px;
+        
+        bottom: 40%;
+        left: -300px
 }
 
 /* Nav Bar */
@@ -112,10 +162,57 @@ nav #navList {
         left: 0;
         bottom: 0;
         opacity: 0;
-        transition: all ease 0.3s;
+        transition: all ease 0.2s;
         pointer-events: none;
 }
 
-#navList li:hover::after {
-        opacity: 1
+#navList li:hover::after,
+#navList li:focus::after {
+        opacity: 1;
+}
+
+.homePage,
+.aboutPage,
+.contactPage {
+        margin-top: 100px;
+}
+
+/* Main Section */
+.homePage {
+        display: flex;
+        flex-direction: column;
+
+        padding: 0 50px;
+
+}
+
+.mainContent {
+        position: relative;
+}
+
+.mainText h1 {
+        font-size: 3rem;
+}
+
+.mainText p {
+        font-size: 1.5rem;
+}
+
+.homeSVG {
+        position: absolute;
+        right: 0;
+        top: 0;
+}
+
+.homeSVG img {
+        width: 350px;
+        height: 350px;
+}
+
+.homeButton {
+        margin-top: 100px;
+}
+
+.homeButton button {
+        font-size: 1.8rem;
 }
