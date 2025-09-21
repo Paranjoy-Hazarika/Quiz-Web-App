@@ -23,14 +23,6 @@ body {
         color: var(--main-text-color);
         line-height: 1.6;
 
-        /* Background Image */
-        /* ! background-image: url("Assets/quiz website background 2.jpg"); */
-        /* ! backdrop-filter: blur(2px); */
-        background-position: center;
-        background-size: cover;
-        background-attachment: fixed;
-        position: relative;
-
         /* Flex Properties */
         min-height: 100vh;
         display: flex;
@@ -82,101 +74,6 @@ main {
         overflow-x: hidden;
 }
 
-.circleGradients {
-        min-width: 100%;
-        min-height: 100%;
-
-}
-
-.circle {
-        border-radius: 100%;
-        position: absolute;
-        z-index: -100;
-        
-        filter: blur(100px);
-}
-
-.circle1 {
-        background-color: green;
-        width: 500px;
-        height: 500px;
-
-        top: -250px;
-        right: -250px;
-}
-
-.circle2 {
-        background-color: blue;
-        width: 400px;
-        height: 400px;
-
-}
-
-.circle3 {
-        background-color: red;
-        width: 600px;
-        height: 600px;
-        
-        bottom: 40%;
-        left: -300px
-}
-
-/* Nav Bar */
-nav {
-        /* BG properties */
-        background-color: rgba(255, 255, 255, 0.8);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-
-        /* Flex Properties */
-        padding: 10px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-}
-
-nav #navTitle {
-        margin: 0;
-}
-
-nav #navList {
-        /* List Design */
-        list-style: none;
-        
-        /* Display Properties */
-        display: flex;
-        justify-content: space-around;
-        width: 25%;
-}
-
-#navList li {
-        position: relative;
-        cursor: pointer;
-}
-
-#navList li::after {
-        content: '';
-        height: 2.5px;
-        width: 100%;
-        background-color: rgb(0, 180, 255);
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        opacity: 0;
-        transition: all ease 0.2s;
-        pointer-events: none;
-}
-
-#navList li:hover::after,
-#navList li:focus::after {
-        opacity: 1;
-}
-
-.homePage,
-.aboutPage,
-.contactPage {
-        margin-top: 100px;
-}
-
 /* Main Section */
 .homePage {
         display: flex;
@@ -196,17 +93,6 @@ nav #navList {
 
 .mainText p {
         font-size: 1.5rem;
-}
-
-.homeSVG {
-        position: absolute;
-        right: 0;
-        top: 0;
-}
-
-.homeSVG img {
-        width: 350px;
-        height: 350px;
 }
 
 .homeButton {
