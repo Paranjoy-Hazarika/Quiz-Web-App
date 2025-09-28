@@ -14,28 +14,47 @@
 
 <body>
     <main>
-        <!-- Home Page Section -->
-        <section class="homePage">
-            <div class="mainContent">
-                <div class="mainText">
-                    <h1>Welcome to the Quiz Web App</h1>
-                    <p>Test your knowledge with our quizzes!</p>
+
+        <!-- Quiz Section -->
+        <section class="quizPage">
+            <h1 id="quizSection">Quiz Webapp</h1>
+            <button class="quizControl">Start</button>
+        </section>
+
+        <section class="quizSection hidden">
+            <div class="questionContainer">
+                <p class="question"><span class="questionNum">1. </span>What is your name?</p>
+            </div>
+
+            <div class="optionContainer">
+                <div class="option1">
+                    <p class="option"><span class="optionNum">1. </span> Paranjoy</p>
+                </div>
+
+                <div class="option2">
+                    <p class="option"><span class="optionNum">2. </span> Max</p>
+                </div>
+
+                <div class="option3">
+                    <p class="option"><span class="optionNum">3. </span> Lewis</p>
+                </div>
+
+                <div class="option4">
+                    <p class="option"><span class="optionNum">4. </span> Lara</p>
                 </div>
             </div>
-            <div class="homeButton">
-                <button>Start Quiz</button>
+
+            <div class="submitButtons">
+                <button class="prevButton">Prev</button>
+                <button class="nextButton">Next</button>
             </div>
         </section>
 
-        <!-- Quiz Section -->
-           <section class="quizPage hidden">
-                <h1 id="quizSection">Quiz Section</h1>
-                <div class="quizContent">
-                    <div class="questionContainer"></div>
-                    <div class="optionContainer"></div>
-                </div>
-                <button class="quizControl">Submit</button>
-           </section>
+        <section class="resultSection hidden">
+            <h1>Result</h1>
+            <p class="score">Your score is: <span class="scoreNum">0</span></p>
+            <button class="restartButton">Restart Quiz</button>            
+        </section>
 
     </main>
 
