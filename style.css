@@ -105,7 +105,7 @@ section {
 
         max-width: 90%;
         width: 500px;
-        padding: 50px;
+        /* padding: 50px; */
 }
 
 .quizSection div {
@@ -123,9 +123,16 @@ section {
         width: 100%;
 }
 
+.questionContainer,
+.optionContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+}
+
 .option {
         font-size: 1.5rem;
-        width: 100%;
         padding: 0 10px;
         border-radius: 8px;
         cursor: pointer;
