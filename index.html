@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Web App</title>
 
-    <!-- This is the font awesome link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- This is the css link -->
      <link rel="stylesheet" href="./style.css">
@@ -23,36 +22,35 @@
 
         <section class="quizSection hidden">
             <div class="questionContainer">
-                <p class="question"><span class="questionNum">1. </span>What is your name?</p>
+                <p class="question"></p>
             </div>
 
             <div class="optionContainer">
-                <div class="options option1">
-                    <p class="option"><span class="optionNum">1. </span> Paranjoy</p>
+                <div class="options">
+                    <p class="option" id="option1"></p>
                 </div>
 
-                <div class="options option2">
-                    <p class="option"><span class="optionNum">2. </span> Max</p>
+                <div class="options">
+                    <p class="option" id="option2"></p>
                 </div>
 
-                <div class="options option3">
-                    <p class="option wrong"><span class="optionNum">3. </span> Lewis</p>
+                <div class="options">
+                    <p class="option" id="option3"></p>
                 </div>
 
-                <div class="options option4">
-                    <p class="option correct"><span class="optionNum">4. </span> Lara</p>
+                <div class="options">
+                    <p class="option" id="option4"><span class="optionNum"></p>
                 </div>
             </div>
 
             <div class="submitButtons">
-                <button class="prevButton">Prev</button>
                 <button class="nextButton">Next</button>
             </div>
         </section>
 
         <section class="resultSection hidden">
             <h1>Result</h1>
-            <p class="score">Your score is: <span class="scoreNum">0</span></p>
+            <p class="score">Your score is: <span class="scoreNum"></span></p>
             <button class="restartButton">Restart Quiz</button>            
         </section>
 

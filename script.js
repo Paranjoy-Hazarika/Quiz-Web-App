@@ -25,17 +25,38 @@ function hiddenToggle(element) {
     element.classList.toggle("hidden");
 }
 
-function questionManager(question, options, questionNumber) {
-    let optionNumber = 0;
-    let option = 0;
+function questionManager(question, questionNumber) {
+    question.textContent = `${questionNumber + 1}. ${quizInfo[questionNumber].question}`;
 
-    question.textContent = quizInfo[questionNumber].question;
-    while (optionNumber < 4) {
-        options[optionNumber].textContent = quizInfo[questionNumber].options[option];
+    optionContainer.forEach((optionElement, i) => {
+        optionElement.textContent = `${i + 1}. ${quizInfo[questionNumber].options[i]}`;
+    })
+}
 
-        optionNumber++;
-        option = option + 1;
+function checkAnswers(targetObject, userAnswer) {
+    const correctAnswer = quizInfo[questionNumber].answer;
+    optionContainer.forEach(opt => {
+        opt.style.pointerEvents = "none";
+    })
+
+    if (userAnswer === correctAnswer) {
+        score++;
+        targetObject.classList.add("correct");
+        return;
     }
+
+    optionContainer.forEach(optionElement => {
+        const optionText = optionElement.textContent.substring(optionElement.textContent.indexOf(' ') + 1);
+        if (optionText != correctAnswer) {
+            optionElement.classList.add("wrong")
+        } else {
+            optionElement.classList.add("correct");
+        }
+    })
+}
+
+function displayScore() {
+    scoreContainer.textContent = `${score}/${quizLength}`;
 }
 
 const startQuizBtn = document.querySelector('.quizStart');
@@ -49,38 +70,72 @@ const madeBy = document.querySelector(".madeBy");
 
 const questionContainer = document.querySelector(".question");
 const optionContainer = document.querySelectorAll(".option");
+const scoreContainer = document.querySelector(".scoreNum");
 
 const quizLength = quizInfo.length;
 
 let currentQuestionNumber = 1;
 let questionNumber = 0;
+let score = 0;
 
 startQuizBtn.addEventListener("click", () => {
+    nextBtn.classList.add("hideBtn");
     hiddenToggle(quizStartPage);
     hiddenToggle(quizSection);
     hiddenToggle(madeBy);
     
-    questionManager(questionContainer, optionContainer, questionNumber);
+    questionManager(questionContainer, questionNumber);
 })
 
-
 nextBtn.addEventListener("click", () => {
-        currentQuestionNumber++;
+    nextBtn.classList.add("hideBtn");
 
-        if (currentQuestionNumber <= quizLength) {
-            questionNumber++;
-            questionManager(questionContainer, optionContainer, questionNumber);
-        } else {
-            hiddenToggle(quizSection)
-            hiddenToggle(scoreSection);
+    optionContainer.forEach(opt => {
+        opt.classList.remove("correct");
+        opt.classList.remove("wrong");
+        opt.style.pointerEvents = "all";
+    })
+
+    if (currentQuestionNumber < quizLength) {
+        currentQuestionNumber++;
+        questionNumber++;
+        questionManager(questionContainer, questionNumber);
+    } else {
+        displayScore();
+
+        hiddenToggle(quizSection)
+        hiddenToggle(scoreSection);
+        hiddenToggle(madeBy);
+        console.log(score);
     }
 })
 
+
 restartBtn.addEventListener("click", () => {
+    optionContainer.forEach(opt => {
+        opt.classList.remove("correct");
+        opt.classList.remove("wrong");
+        opt.style.pointerEvents = "all";
+    })
+
     currentQuestionNumber = 1;
     questionNumber = 0;
+    score = 0;
 
     hiddenToggle(quizStartPage);
     hiddenToggle(scoreSection);
-    hiddenToggle(madeBy);
+    nextBtn.classList.add("hideBtn");
+})
+
+optionContainer.forEach(optionElement => {
+    optionElement.addEventListener('click', (e) => {
+        nextBtn.classList.remove("hideBtn");
+
+        const clickedObj = e.target;
+        const clickedText = clickedObj.textContent.trim();
+        const answerText = clickedText.substring(clickedText.indexOf(' ') + 1);
+        console.log(answerText);
+
+        checkAnswers(clickedObj, answerText);
+    })
 })

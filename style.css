@@ -103,6 +103,7 @@ section {
 
         gap: 20px;
 
+        max-width: 90%;
         width: 500px;
         padding: 50px;
 }
@@ -114,18 +115,26 @@ section {
 .questionContainer {
         text-align: left;
         font-size: 2rem;
+
+        width: 100%;;
 }
 
 .optionContainer {
-        max-width: 80%;
-}
-
-.options {
-        cursor: pointer;
+        width: 100%;
 }
 
 .option {
         font-size: 1.5rem;
+        width: 100%;
+        padding: 0 10px;
+        border-radius: 8px;
+        cursor: pointer;
+
+        transition: all 0.2s;
+}
+
+.option:hover {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .submitButtons {
@@ -141,17 +150,31 @@ section {
         font-size: var(--main-heading-font);
 }
 
+.resultSection button {
+        font-size: var(--button-font);
+}
+
 .score {
         font-size: 1.5rem;
 }
 
+.scoreNum {
+        font-size: 2rem;
+}
+
 /* Correct or Wrong */
 .correct {
-        background-color: green;
+        background-color: hsl(140, 52%, 60%);
 }
 
 .wrong {
-        background-color: red;
+        background-color: hsl(3, 100%, 71%);
+}
+
+/* Button Hide */
+.hideBtn {
+        visibility: hidden;
+        opacity: 0;
 }
 
 /* Footer Part */
