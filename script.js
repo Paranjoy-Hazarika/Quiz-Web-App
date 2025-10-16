@@ -47,8 +47,8 @@ function checkAnswers(targetObject, userAnswer) {
 
     optionContainer.forEach(optionElement => {
         const optionText = optionElement.textContent.substring(optionElement.textContent.indexOf(' ') + 1);
-        if (optionText != correctAnswer) {
-            optionElement.classList.add("wrong")
+        if (optionText !== correctAnswer) {
+            optionElement.classList.add("wrong");
         } else {
             optionElement.classList.add("correct");
         }
