@@ -3,7 +3,7 @@
 :root {
         --bg-overlay-color: 255, 255, 255, 0.3;
         --main-text-color: #333;
-        --button-text-color: #ffffe3;
+        --button-text-color: #f3f3f3;
         --background-color: #f3f3f3;
 
         --main-heading-font: 4rem;
@@ -28,10 +28,9 @@ body {
         line-height: 1.6;
 
         /* Flex Properties */
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-
+        max-height: 100dvh;
+        height: 100vh;
+        
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -89,6 +88,7 @@ section {
 
 .quizPage h1 {
         font-size: var(--main-heading-font);
+        text-align: center;
 }
 
 .quizPage button {

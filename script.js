@@ -1,25 +1,27 @@
-const quizInfo = [
-    {
-        question : "This is question 1?",
-        options : ["Option 1", "Option 2", "Option 3", "Option 4"],
-        answer : "Option 1"
-    },
-    {
-        question : "This is question 2?",
-        options : ["Option A", "Option B", "Option C", "Option D"],
-        answer : "Option A"
-    },
-    {
-        question : "This is question 3?",
-        options : ["Option V", "Option X", "Option Y", "Option Z"],
-        answer : "Option Y"
-    },
-    {
-        question : "This is question 4?",
-        options : ["Option i", "Option ii", "Option iii", "Option iv"],
-        answer : "Option ii"
-    }
-]
+let quizInfo = [];
+let questionNumber = 0;
+let score = 0;
+let quizLength;
+
+fetch("./data.json")
+    .then(response => {
+        
+        if (!response.ok) {
+            throw new Error();
+        }
+
+        return response.json();
+    })
+    .then(data => {
+        quizInfo = data;
+        quizLength = quizInfo.length;
+        setupInit();
+    })
+
+    .catch(error => {
+        console.error("Error loading the quiz: ", error);
+        alert("Failed to load the quiz data. Please refresh the page");
+    })
 
 function hiddenToggle(element) {
     element.classList.toggle("hidden");
@@ -72,22 +74,22 @@ const questionContainer = document.querySelector(".question");
 const optionContainer = document.querySelectorAll(".option");
 const scoreContainer = document.querySelector(".scoreNum");
 
-const quizLength = quizInfo.length;
+function setupInit() {
+    startQuizBtn.addEventListener('click', startBtnLogic);
+    nextBtn.addEventListener('click', nextBtnLogic);
+    restartBtn.addEventListener('click', restartBtnLogic);
+}
 
-let currentQuestionNumber = 1;
-let questionNumber = 0;
-let score = 0;
-
-startQuizBtn.addEventListener("click", () => {
+function startBtnLogic() {
     nextBtn.classList.add("hideBtn");
     hiddenToggle(quizStartPage);
     hiddenToggle(quizSection);
     hiddenToggle(madeBy);
     
     questionManager(questionContainer, questionNumber);
-})
+}
 
-nextBtn.addEventListener("click", () => {
+function nextBtnLogic() {
     nextBtn.classList.add("hideBtn");
 
     optionContainer.forEach(opt => {
@@ -96,8 +98,7 @@ nextBtn.addEventListener("click", () => {
         opt.style.pointerEvents = "all";
     })
 
-    if (currentQuestionNumber < quizLength) {
-        currentQuestionNumber++;
+    if (questionNumber < quizLength - 1) {
         questionNumber++;
         questionManager(questionContainer, questionNumber);
     } else {
@@ -108,24 +109,23 @@ nextBtn.addEventListener("click", () => {
         hiddenToggle(madeBy);
         console.log(score);
     }
-})
+}
 
 
-restartBtn.addEventListener("click", () => {
+function restartBtnLogic() {
     optionContainer.forEach(opt => {
         opt.classList.remove("correct");
         opt.classList.remove("wrong");
         opt.style.pointerEvents = "all";
     })
 
-    currentQuestionNumber = 1;
     questionNumber = 0;
     score = 0;
 
     hiddenToggle(quizStartPage);
     hiddenToggle(scoreSection);
     nextBtn.classList.add("hideBtn");
-})
+}
 
 optionContainer.forEach(optionElement => {
     optionElement.addEventListener('click', (e) => {
