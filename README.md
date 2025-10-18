@@ -1,16 +1,16 @@
 # Quiz Web App
 
-Live Demo
-https://paranjoy-quizapp.netlify.app/
+## Live Demo
+[Quiz Web App Demo](https://paranjoy-quizapp.netlify.app/)
 
 ## Project Summary
-A lightweight. client-side quiz application that loads question data from a JSON file and presents a multiple-choice quiz. Built as a single-page static website using vanilla HTML, CSS and JavaScript. Designed for quick deployment and easy customization of quiz content.
+A lightweight, client-side quiz application that loads question data from a JSON file and presents a multiple-choice quiz. Built as a single-page static website using vanilla HTML, CSS and JavaScript. Designed for quick deployment and easy customization of quiz content.
 
 ## Key Features
 
 - Loads question from `data.json` (JSON-driven content)
 - Multiple-choice UI with per-question feedback (correct / wrong styling)
-- Multiple-choice UI with per-question feedback (correct / wrong styling)
+- Score summary and restart flow
 
 ## Tech stack
 - HTML5, CSS3 (custom styles, responsive), JavaScript (ES6+)
