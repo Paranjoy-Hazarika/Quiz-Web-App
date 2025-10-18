@@ -7,8 +7,10 @@ fetch("./data.json")
     .then(response => {
         
         if (!response.ok) {
+        console.log(response);
             throw new Error();
         }
+        console.log(response);
 
         return response.json();
     })
