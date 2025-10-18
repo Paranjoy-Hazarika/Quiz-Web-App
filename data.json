@@ -1,22 +1,52 @@
 [
     {
-        "question" : "This is question 1?",
-        "options" : ["Option 1", "Option 2", "Option 3", "Option 4"],
-        "answer" : "Option 1"
+        "question": "What color is the 'E' in the Google logo?",
+        "options": ["Blue", "Red", "Green", "Yellow"],
+        "answer": "Red"
     },
     {
-        "question" : "This is question 2?",
-        "options" : ["Option A", "Option B", "Option C", "Option D"],
-        "answer" : "Option A"
+        "question": "Which element has the chemical symbol 'O'?",
+        "options": ["Oxygen", "Gold", "Osmium", "Hydrogen"],
+        "answer": "Oxygen"
     },
     {
-        "question" : "This is question 3?",
-        "options" : ["Option V", "Option X", "Option Y", "Option Z"],
-        "answer" : "Option Y"
+        "question": "Who wrote 'Romeo and Juliet'?",
+        "options": ["William Shakespeare", "Mark Twain", "Charles Dickens", "Jane Austen"],
+        "answer": "William Shakespeare"
     },
     {
-        "question" : "This is question 4?",
-        "options" : ["Option i", "Option ii", "Option iii", "Option iv"],
-        "answer" : "Option ii"
+        "question": "What is 7 × 8?",
+        "options": ["54", "56", "49", "64"],
+        "answer": "56"
+    },
+    {
+        "question": "Which planet is known as the Red Planet?",
+        "options": ["Mars", "Venus", "Jupiter", "Saturn"],
+        "answer": "Mars"
+    },
+    {
+        "question": "Which programming language is primarily used for web development?",
+        "options": ["JavaScript", "Python", "C++", "Java"],
+        "answer": "JavaScript"
+    },
+    {
+        "question": "Which ocean is the largest on Earth?",
+        "options": ["Pacific Ocean", "Atlantic Ocean", "Indian Ocean", "Arctic Ocean"],
+        "answer": "Pacific Ocean"
+    },
+    {
+        "question": "What is the smallest prime number?",
+        "options": ["1", "2", "3", "0"],
+        "answer": "2"
+    },
+    {
+        "question": "Which animal is known as the 'King of the Jungle'?",
+        "options": ["Lion", "Tiger", "Elephant", "Giraffe"],
+        "answer": "Lion"
+    },
+    {
+        "question": "In which year did the first man land on the moon?",
+        "options": ["1969", "1971", "1965", "1975"],
+        "answer": "1969"
     }
 ]

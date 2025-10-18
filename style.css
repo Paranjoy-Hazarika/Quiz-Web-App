@@ -53,7 +53,7 @@ button {
         border-radius: 8px;
         cursor: pointer;
         text-transform: uppercase;
-        font-size: 1.2rem;
+        font-size: var(--button-font);
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         transition: all ease 0.3s;
 }
@@ -105,7 +105,6 @@ section {
 
         max-width: 90%;
         width: 500px;
-        /* padding: 50px; */
 }
 
 .quizSection div {
