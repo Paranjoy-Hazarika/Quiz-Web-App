@@ -1,0 +1,30 @@
+@media (max-width: 500px) {
+    
+    button, a {
+            -webkit-tap-highlight-color: transparent;
+    }
+
+    :root {
+        --main-heading-font: 3.2rem;
+        --button-font: 1.2rem;
+        --text-primary-font: 1.5rem;
+        --text-secondary-font: 1.2rem;
+        --footer-font: 0.9rem;
+    }
+
+    .quizSection {
+        width: 350px;
+    }
+
+    .quizStart:active,
+    .nextButton:active,
+    .restartButton:active {
+            transform: scale(0.98);
+    }
+}
+
+@media (min-width: 500px) {
+    .option:active {
+            transform: scale(0.95);
+    }
+}

@@ -11,6 +11,7 @@ A lightweight, client-side quiz application that loads question data from a JSON
 - Loads question from `data.json` (JSON-driven content)
 - Multiple-choice UI with per-question feedback (correct / wrong styling)
 - Score summary and restart flow
+- Responsive layout with CSS variables and modern font stack
 
 ## Tech stack
 - HTML5, CSS3 (custom styles, responsive), JavaScript (ES6+)
